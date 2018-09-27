@@ -1,0 +1,8 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sat May 07 02:05:46 UTC 2016
+cli-renderer-1.0.2-Beryllium-SR2-external-resource.json>=
+cli-renderer-1.0.2-Beryllium-SR2-config.xml>=
+cli-renderer-1.0.2-Beryllium-SR2.jar>=
+cli-renderer-1.0.2-Beryllium-SR2-host-resource.json>=
+cli-renderer-1.0.2-Beryllium-SR2-node-resource.json>=
+cli-renderer-1.0.2-Beryllium-SR2-link-resource.json>=

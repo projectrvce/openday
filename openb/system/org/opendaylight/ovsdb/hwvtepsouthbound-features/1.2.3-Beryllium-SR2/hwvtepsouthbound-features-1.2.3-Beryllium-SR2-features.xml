@@ -1,0 +1,40 @@
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.2.0" name="odl-ovsdb-hwvtepsouthbound-1.2.3-Beryllium-SR2" xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <repository>mvn:org.opendaylight.yangtools/features-yangtools/0.8.2-Beryllium-SR2/xml/features</repository>
+  <repository>mvn:org.opendaylight.controller/features-mdsal/1.3.2-Beryllium-SR2/xml/features</repository>
+  <repository>mvn:org.opendaylight.netconf/features-restconf/1.3.2-Beryllium-SR2/xml/features</repository>
+  <repository>mvn:org.opendaylight.mdsal.model/features-mdsal-model/0.8.2-Beryllium-SR2/xml/features</repository>
+  <repository>mvn:org.opendaylight.dlux/features-dlux/0.3.2-Beryllium-SR2/xml/features</repository>
+  <repository>mvn:org.opendaylight.ovsdb/library-features/1.2.3-Beryllium-SR2/xml/features</repository>
+  <feature name="odl-ovsdb-hwvtepsouthbound-api" version="1.2.3-Beryllium-SR2" description="OpenDaylight :: hwvtepsouthbound :: api">
+    <feature version="0.8.2-Beryllium-SR2">odl-mdsal-models</feature>
+    <bundle>mvn:org.opendaylight.ovsdb/hwvtepsouthbound-api/1.2.3-Beryllium-SR2</bundle>
+  </feature>
+  <feature name="odl-ovsdb-hwvtepsouthbound" version="1.2.3-Beryllium-SR2" description="OpenDaylight :: hwvtepsouthbound">
+    <feature version="1.3.2-Beryllium-SR2">odl-mdsal-broker</feature>
+    <feature version="1.2.3-Beryllium-SR2">odl-ovsdb-hwvtepsouthbound-api</feature>
+    <bundle>mvn:org.opendaylight.ovsdb/hwvtepsouthbound-impl/1.2.3-Beryllium-SR2</bundle>
+    <bundle>mvn:org.opendaylight.ovsdb/library/1.2.3-Beryllium-SR2</bundle>
+    <bundle>mvn:com.fasterxml.jackson.core/jackson-annotations/2.3.2</bundle>
+    <bundle>mvn:com.fasterxml.jackson.core/jackson-core/2.3.2</bundle>
+    <bundle>mvn:com.fasterxml.jackson.core/jackson-databind/2.3.2</bundle>
+    <bundle>mvn:com.fasterxml.jackson.datatype/jackson-datatype-json-org/2.3.2</bundle>
+    <bundle>wrap:mvn:org.json/json/20131018</bundle>
+    <feature version="1.2.3-Beryllium-SR2">odl-ovsdb-library</feature>
+    <configfile finalname="etc/opendaylight/karaf/hwvtepsouthbound.xml">mvn:org.opendaylight.ovsdb/hwvtepsouthbound-impl/1.2.3-Beryllium-SR2/xml/config</configfile>
+  </feature>
+  <feature name="odl-ovsdb-hwvtepsouthbound-rest" version="1.2.3-Beryllium-SR2" description="OpenDaylight :: hwvtepsouthbound :: REST">
+    <feature version="1.2.3-Beryllium-SR2">odl-ovsdb-hwvtepsouthbound</feature>
+    <feature version="1.3.2-Beryllium-SR2">odl-restconf</feature>
+  </feature>
+  <feature name="odl-ovsdb-hwvtepsouthbound-ui" version="1.2.3-Beryllium-SR2" description="OpenDaylight :: hwvtepsouthbound :: UI">
+    <feature version="1.2.3-Beryllium-SR2">odl-ovsdb-hwvtepsouthbound-rest</feature>
+    <feature version="1.3.2-Beryllium-SR2">odl-mdsal-apidocs</feature>
+    <feature version="1.3.2-Beryllium-SR2">odl-mdsal-xsql</feature>
+    <feature version="0.3.2-Beryllium-SR2">odl-dlux-yangui</feature>
+  </feature>
+  <feature name="odl-ovsdb-hwvtepsouthbound-test" version="1.2.3-Beryllium-SR2" description="OpenDaylight :: hwvtepsouthbound :: test">
+    <feature version="1.2.3-Beryllium-SR2">odl-ovsdb-hwvtepsouthbound</feature>
+    <bundle>mvn:org.opendaylight.ovsdb/utils.mdsal-utils/1.2.3-Beryllium-SR2</bundle>
+    <bundle>mvn:org.opendaylight.ovsdb/utils.hwvtepsouthbound-utils/1.2.3-Beryllium-SR2</bundle>
+  </feature>
+</features>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+#
+# Copyright (c) 2014-2015 NEC Corporation
+# All rights reserved.
+#
+# This program and the accompanying materials are made available under the
+# terms of the Eclipse Public License v1.0 which accompanies this
+# distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+#
+-->
+
+<features name="vtn-manager-0.4.2-Beryllium-SR2" xmlns="http://karaf.apache.org/xmlns/features/v1.2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
+
+  <repository>mvn:org.opendaylight.controller/features-mdsal/1.3.2-Beryllium-SR2/xml/features</repository>
+  <repository>mvn:org.opendaylight.mdsal.model/features-mdsal-model/0.8.2-Beryllium-SR2/xml/features</repository>
+  <repository>mvn:org.opendaylight.netconf/features-restconf/1.3.2-Beryllium-SR2/xml/features</repository>
+  <repository>mvn:org.opendaylight.neutron/features-neutron/0.6.2-Beryllium-SR2/xml/features</repository>
+  <repository>mvn:org.opendaylight.ovsdb/southbound-features/1.2.3-Beryllium-SR2/xml/features</repository>
+  <repository>mvn:org.opendaylight.openflowplugin/features-openflowplugin/0.2.2-Beryllium-SR2/xml/features</repository>
+
+  <feature
+      name='odl-vtn-manager'
+      description="OpenDaylight :: VTN Manager :: Java API"
+      version='0.4.2-Beryllium-SR2'>
+    <feature version="0.8.2-Beryllium-SR2">odl-mdsal-models</feature>
+    <feature version="1.3.2-Beryllium-SR2">odl-mdsal-broker</feature>
+    <feature version="0.2.2-Beryllium-SR2">odl-openflowplugin-flow-services</feature>
+    <feature version="0.2.2-Beryllium-SR2">odl-openflowplugin-nsf-model</feature>
+    <bundle>mvn:org.opendaylight.vtn/manager/0.4.2-Beryllium-SR2</bundle>
+    <bundle>mvn:org.opendaylight.vtn/manager.model/0.4.2-Beryllium-SR2</bundle>
+    <bundle>mvn:org.opendaylight.vtn/manager.implementation/0.4.2-Beryllium-SR2</bundle>
+    <bundle>mvn:org.opendaylight.controller.thirdparty/net.sf.jung2/2.0.1</bundle>
+    <configfile finalname="etc/opendaylight/karaf/80-vtn.xml">mvn:org.opendaylight.vtn/manager.implementation/0.4.2-Beryllium-SR2/xml/config</configfile>
+  </feature>
+
+  <feature
+      name='odl-vtn-manager-rest'
+      description="OpenDaylight :: VTN Manager :: REST API"
+      version='0.4.2-Beryllium-SR2'>
+    <feature version="0.4.2-Beryllium-SR2">odl-vtn-manager</feature>
+    <feature version="1.3.2-Beryllium-SR2">odl-restconf</feature>
+  </feature>
+
+ <feature
+      name='odl-vtn-manager-neutron'
+      description="OpenDaylight :: VTN Manager :: Neutron Interface"
+      version='0.4.2-Beryllium-SR2'>
+    <feature version="1.3.2-Beryllium-SR2">odl-mdsal-broker</feature>
+    <feature version="0.4.2-Beryllium-SR2">odl-vtn-manager</feature>
+    <feature version='0.6.2-Beryllium-SR2'>odl-neutron-service</feature>
+    <bundle>mvn:org.opendaylight.neutron/dummyprovider/0.6.2-Beryllium-SR2</bundle>
+    <feature version='1.2.3-Beryllium-SR2'>odl-ovsdb-southbound-impl</feature>
+    <bundle>mvn:org.opendaylight.vtn/manager.neutron/0.4.2-Beryllium-SR2</bundle>
+    <configfile finalname="etc/opendaylight/karaf/90-vtn-neutron.xml">mvn:org.opendaylight.vtn/manager.neutron/0.4.2-Beryllium-SR2/xml/config</configfile>
+  </feature>
+</features>

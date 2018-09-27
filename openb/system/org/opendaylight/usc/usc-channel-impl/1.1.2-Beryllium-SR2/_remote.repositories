@@ -1,0 +1,9 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sat May 07 02:05:46 UTC 2016
+usc-channel-impl-1.1.2-Beryllium-SR2-clientkey.pem>=
+usc-channel-impl-1.1.2-Beryllium-SR2-rootCA.pem>=
+usc-channel-impl-1.1.2-Beryllium-SR2-config.xml>=
+usc-channel-impl-1.1.2-Beryllium-SR2.jar>=
+usc-channel-impl-1.1.2-Beryllium-SR2-usc.properties>=
+usc-channel-impl-1.1.2-Beryllium-SR2-akka.conf>=
+usc-channel-impl-1.1.2-Beryllium-SR2-client.pem>=

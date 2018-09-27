@@ -1,0 +1,7 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Sat May 07 02:05:46 UTC 2016
+bgp-controller-config-0.5.2-Beryllium-SR2-config.xml>=
+bgp-controller-config-0.5.2-Beryllium-SR2-config-example.xml>=
+bgp-controller-config-0.5.2-Beryllium-SR2-bmp-config.xml>=
+bgp-controller-config-0.5.2-Beryllium-SR2-bmp-config-example.xml>=
+bgp-controller-config-0.5.2-Beryllium-SR2-openconfig-config.xml>=
